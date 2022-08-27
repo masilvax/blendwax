@@ -1,0 +1,114 @@
+<div flex id="gura">
+<md-toolbar class="md-raised toolbarFixed padding0 toolbarPrawyPadding" flex layout="row" layout-align="space-between center">
+    
+    <div layout="row" layout-align="start center">
+    <md-button class="md-icon-button" ng-href="#!othersSets"><md-icon aria-label="..." class="material-icons">arrow_backward</md-icon></md-button>
+    <h1>
+        [[ lista.set.login ]]'s set details
+    </h1>
+    </div>
+  
+                    <div layout="row" flex="20" layout-align="end center" class="lapkiWToolbarze">
+                        <div layout="row" layout-align="center center">
+                        <md-button class="md-icon-button margin0" ng-click="likeIt(lista.set.id)">
+                            <md-tooltip md-delay="100" ng-if="lista.set.lapka!='gora'">I like it</md-tooltip>
+                            <md-tooltip md-delay="100" ng-if="lista.set.lapka=='gora'">I don't like it anymore</md-tooltip>
+                            <md-icon ng-hide="loaderUp" aria-label="..." class="material-icons" md-colors="lista.set.lapka == 'gora' ? {color:'primary-50'} : {color:'primary-300'} ">thumb_up</md-icon>
+                            <md-progress-circular class="md-accent" ng-show="loaderUp" md-diameter="24"></md-progress-circular>
+                        </md-button>
+                        <span md-colors="lista.set.lapka == 'gora' ? {color:'primary-50'} : {color:'primary-300'} ">[[ lista.set.l_lapek_gora ]]</span>
+                        </div>
+                    
+                        <div layout="row" layout-align="center center">
+                        <md-button class="md-icon-button margin0" ng-click="dislikeIt(lista.set.id)">
+                            <md-tooltip md-delay="100" ng-if="lista.set.lapka!='dol'">I don't like it</md-tooltip>
+                            <md-tooltip md-delay="100" ng-if="lista.set.lapka=='dol'">I like it now</md-tooltip>
+                            <md-icon ng-hide="loaderDown" aria-label="..." class="material-icons" md-colors="lista.set.lapka == 'dol' ? {color:'primary-50'} : {color:'primary-300'} ">thumb_down</md-icon>
+                            <md-progress-circular class="md-accent" ng-show="loaderDown" md-diameter="24"></md-progress-circular>
+                        </md-button>
+                        <span md-colors="lista.set.lapka == 'dol' ? {color:'primary-50'} : {color:'primary-300'} ">[[ lista.set.l_lapek_dol ]]</span>
+                        </div>
+
+                    </div>
+  
+    <md-progress-linear md-mode="indeterminate" ng-show="loaderDanych" class="loaderWtoolbarze md-accent md-hue-3"></md-progress-linear>
+</md-toolbar>
+
+    
+    <div flex="100" style="padding-bottom:4px;">
+    <div flex="100" layout-padding>
+    
+        <md-card layout="row" layout-align="space-between" flex="100" layout-fill class="kartaMojaKolekcja">
+
+            <md-card-title-media>
+                <div class="md-media-sm card-media obrazekPlytySet" style="background: url('gfx/[[piosnka.discogs_id]].jpg') no-repeat 0% 0% / cover, url('gfx/record.png') no-repeat 0% 0% / cover;margin: -8px;"></div>
+            </md-card-title-media>  
+            
+            <md-card-title layout="column" class="cardTitleMyCollection">
+                <md-card-title-text>
+                    <span class="md-headline">[[lista.set.nazwa]]</span>
+                    <span class="md-subhead">genre: [[lista.set.styl]]</span>
+                    <span class="md-subhead">
+                        <a ng-if="lista.set.link != ''" href="[[lista.set.link]]" target="_blank">
+                            <md-icon layout-align="center center" aria-label="..." class="material-icons" ng-style="{'font-size':'17px','line-height':'1.4'}">volume_up</md-icon>
+                        [[lista.set.link]]</a>
+                        
+                        <md-icon ng-if="lista.set.link == ''" layout-align="center center" aria-label="..." class="material-icons" ng-style="{'font-size':'17px','line-height':'1.4'}">volume_off</md-icon>
+                    </span>
+                </md-card-title-text>
+                
+                    <md-card-actions layout="row" layout-align="end center" class="margin0">
+
+                    </md-card-actions>
+
+            </md-card-title>
+        
+        
+        </md-card>
+    </div>
+    
+    <div ng-repeat="piosnka in lista.piosenki | orderBy: 'kolejnosc' track by piosnka.kolejnosc" flex="100" layout-padding style="padding:4px 8px;">
+    
+        <md-card style="margin:0 0 8px 0;" layout="row" layout-align="space-between" ng-if="!$first" ng-hide="!edycja && (piosnka.opis=='' || piosnka.opis==null)">
+            <md-input-container class="szer99proc inputKontenerSetOpis" style="margin-bottom:0;">
+                <label>transition description</label>
+                <textarea type="text" ng-model="piosnka.opis" ng-disabled="!edycja"></textarea>
+            </md-input-container>
+            
+        </md-card>
+        
+        <md-card layout="row" layout-align="space-between" flex="100" layout-fill class="kartaMojaKolekcja">
+
+            <md-card-title-media>
+                <div class="md-media-sm card-media obrazekPlytySet" style="background: url('gfx/[[piosnka.discogs_id]].jpg') no-repeat 0% 0% / cover, url('gfx/record.png') no-repeat 0% 0% / cover;margin: -8px;"></div>
+            </md-card-title-media>  
+            
+            <md-card-title layout="column" class="cardTitleMyCollection">
+                <md-card-title-text>
+                    <span class="md-headline">[[ piosnka.kolejnosc ]]. [[piosnka.artysta]]</span>
+                    <span class="md-subhead">[[piosnka.album]]</span>
+                    <span class="md-subhead">[[piosnka.piosenka]] - [[piosnka.pozycja]]</span>
+                </md-card-title-text>
+                
+                    <md-card-actions layout="row" layout-align="end center" class="margin0">
+                    </md-card-actions>
+
+            </md-card-title>
+        
+        
+        </md-card>
+
+    </div>
+
+    </div>
+        
+    <md-card ng-if="!loaderDanych && !lista.set" flex="100">
+        <md-card-title layout="column">
+            <md-card-title-text>
+                <span class="md-headline">Set list is empty</span>
+            </md-card-title-text>
+        </md-card-title>
+    </md-card>
+
+
+</div><!--zeby ng-view moglo miec min-width:100vh i nie rozciagalo przy layout=column wzdluz-->

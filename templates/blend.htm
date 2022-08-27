@@ -1,0 +1,156 @@
+<div id="gura">
+<md-toolbar class="searchPanel padding0" flex layout="row" layout-align="space-between center">
+
+    <div layout="row" layout-align="start center">
+
+    <md-button class="md-icon-button" ng-href="#!myBlends"><md-icon aria-label="..." class="material-icons">arrow_backward</md-icon></md-button>
+    <h1><span ng-if="!edycjaUkryj">Blend details</span><span ng-if="edycjaUkryj">New blend</span>
+                <md-button ng-hide="edycjaUkryj" ng-click="toggleEdycja()" class="md-fab md-mini md-accent md-hue-3 no-animate margin6x4">
+                    <md-tooltip md-delay="100">Edit this blend</md-tooltip>    
+                    <md-icon md-colors="::{ color: 'primary-50' }" aria-label="..." class="material-icons">edit</md-icon>
+                </md-button>
+                <md-button ng-if="lista.blend.publiczny=='0'" ng-click="togglePubliczny($event)" class="md-fab md-mini md-accent md-hue-3 no-animate margin6x4">
+                    <md-tooltip md-delay="100">Make this blend visible for others</md-tooltip>    
+                    <md-icon ng-hide="loaderPubl" md-colors="::{ color: 'primary-50' }" aria-label="..." class="material-icons">visibility_off</md-icon>
+                    <md-progress-circular ng-show="loaderPubl" md-diameter="28"></md-progress-circular>
+                </md-button>
+                <md-button ng-if="lista.blend.publiczny=='1'" ng-click="togglePubliczny($event)" class="md-fab md-mini md-accent md-hue-3 no-animate margin6x4">
+                    <md-tooltip md-delay="100">Turn off visibility of this blend for others</md-tooltip>    
+                    <md-icon ng-hide="loaderPubl" md-colors="::{ color: 'primary-50' }" aria-label="..." class="material-icons">visibility</md-icon>
+                    <md-progress-circular ng-show="loaderPubl" md-diameter="28"></md-progress-circular>
+                </md-button>
+                <md-button ng-if="edycja" ng-click="zapiszBlend($event)" class="md-fab md-mini md-accent md-hue-3 no-animate margin6x4">
+                    <md-tooltip md-delay="100">Save changes</md-tooltip>    
+                    <md-icon ng-hide="loaderZapis" md-colors="::{ color: 'primary-50' }" aria-label="..." class="material-icons">save</md-icon>
+                    <md-progress-circular ng-show="loaderZapis" md-diameter="28"></md-progress-circular>
+                </md-button>
+                <md-button ng-if="edycja" ng-click="cofnijZmiany($event)" class="md-fab md-mini md-primary md-hue-1 no-animate margin6x4">
+                    <md-tooltip md-delay="100">Discard all changes</md-tooltip>
+                    <md-icon ng-hide="loaderCofnij" md-colors="::{ color: 'primary-50' }" aria-label="..." class="material-icons">undo</md-icon>
+                    <md-progress-circular ng-show="loaderCofnij" md-diameter="28"></md-progress-circular>
+                </md-button>
+    </h1>
+    
+    </div>
+    
+                    <div ng-if="!edycja && !edycjaUkryj" layout="row" flex="20" layout-align="end center" class="lapkiWToolbarze no-animate">
+                        <div layout="row" layout-align="center center">
+                        <md-button class="md-icon-button margin0" ng-disabled="true">
+                            <md-icon aria-label="..." class="material-icons" md-colors="::{color:'primary-300'} ">thumb_up</md-icon>
+                        </md-button>
+                        <span md-colors="::{color:'primary-300'} ">[[ lista.blend.l_lapek_gora ]]</span>
+                        </div>
+                    
+                        <div layout="row" layout-align="center center">
+                        <md-button class="md-icon-button margin0" ng-disabled="true">
+                            <md-icon aria-label="..." class="material-icons" md-colors="::{color:'primary-300'} ">thumb_down</md-icon>
+                        </md-button>
+                        <span md-colors="::{color:'primary-300'} ">[[ lista.blend.l_lapek_dol ]]</span>
+                        </div>
+
+                    </div>
+    
+    <md-progress-linear md-mode="indeterminate" ng-show="loaderDanych" class="loaderWtoolbarze md-accent md-hue-3"></md-progress-linear>
+</md-toolbar>
+<div layout="column" layout-gt-xs="row" layout-fill flex><!-- class="gtMd-2-ltMd-1" -->
+    
+    <div flex="nogrow" flex-gt-xs="33">
+    <md-card ng-if="lista.blend" flex="nogrow">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">[[ lista.blend.artysta1 ]]</span>
+            <span class="md-subhead">[[ lista.blend.album1 ]]</span>
+            <span class="md-subhead">[[ lista.blend.pozycja1 ]] - [[ lista.blend.piosenka1 ]]</span>
+          </md-card-title-text>
+          <md-card-title-media>
+            <div class="md-media-sm card-media" style="background: url('gfx/[[lista.blend.discogs_id1]].jpg') no-repeat 0% 0% / cover, url('gfx/record.png') no-repeat 0% 0% / cover;"></div>
+          </md-card-title-media>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+                    <md-input-container ng-if="edycja" class="szer99proc">
+
+                        <label>Select 1st track</label>
+                        <md-select ng-model="lista.blend.id_piosenki1" ng-disabled="false" md-on-close="clearSearchTermP1()" data-md-container-class="selectdemoSelectHeader" ng-change="aktualizujDeck1()">
+                            
+                            <md-select-header class="demo-select-header">
+                                <input ng-model="model.szukajP1" type="text" placeholder="search (min. 4 letters)" class="demo-header-searchbox md-text" ng-keydown="updateSearch($event)" ng-change="zaladujPiosenki1()">
+                                <md-progress-circular ng-show="loaderPiosenki1" md-diameter="20" style="margin-left:-40px !important;"></md-progress-circular>
+                            </md-select-header>
+                            
+                            <md-optgroup label="tracks">
+                                <md-option ng-value="p1.id" ng-repeat="p1 in model.piosenki1 | filter:model.szukajP1 track by p1.id">
+                                    [[p1.pozycja]] - [[p1.piosenka]] - [[ p1.album ]] - [[ p1.artysta ]]
+                                </md-option>
+                            </md-optgroup>
+
+                        </md-select>
+                    </md-input-container>
+        </md-card-actions>
+        
+    </md-card>
+    </div>
+      
+    <div flex="nogrow" flex-gt-xs="33">
+    <md-card ng-if="lista.blend" layout="row" layout-align="space-between"  flex="nogrow" layout-wrap>
+
+        
+        <md-card-title layout="column">
+            <md-card-title-text>
+                <md-input-container class="szer99proc">
+                    <label>Transition description:</label>
+                    <textarea type="text" ng-model="lista.blend.opis" ng-disabled="!edycja"></textarea>
+                </md-input-container>
+            </md-card-title-text>
+            
+
+        </md-card-title>
+
+    </md-card>
+    </div>
+      
+    <div flex="nogrow" flex-gt-xs="33">
+    <md-card ng-if="lista.blend" flex="nogrow">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">[[ lista.blend.artysta2 ]]</span>
+            <span class="md-subhead">[[ lista.blend.album2 ]]</span>
+            <span class="md-subhead">[[ lista.blend.pozycja2 ]] - [[ lista.blend.piosenka2 ]]</span>
+          </md-card-title-text>
+          <md-card-title-media>
+            <div class="md-media-sm card-media" style="background: url('gfx/[[lista.blend.discogs_id2]].jpg') no-repeat 0% 0% / cover, url('gfx/record.png') no-repeat 0% 0% / cover;"></div>
+          </md-card-title-media>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+                    <md-input-container ng-if="edycja" class="szer99proc">
+
+                        <label>Select 2nd track</label>
+                        <md-select ng-model="lista.blend.id_piosenki2" ng-disabled="false" md-on-close="clearSearchTermP2()" data-md-container-class="selectdemoSelectHeader" ng-change="aktualizujDeck2()">
+                            
+                            <md-select-header class="demo-select-header">
+                                <input ng-model="model.szukajP2" type="text" placeholder="search (min. 4 letters)" class="demo-header-searchbox md-text" ng-keydown="updateSearch($event)" ng-change="zaladujPiosenki2()">
+                                <md-progress-circular ng-show="loaderPiosenki2" md-diameter="20" style="margin-left:-40px !important;"></md-progress-circular>
+                            </md-select-header>
+                            
+                            <md-optgroup label="tracks">
+                                <md-option ng-value="p2.id" ng-repeat="p2 in model.piosenki2 | filter:model.szukajP2 track by p2.id">
+                                    [[p2.pozycja]] - [[p2.piosenka]] - [[ p2.album ]] - [[ p2.artysta ]]
+                                </md-option>
+                            </md-optgroup>
+
+                        </md-select>
+                    </md-input-container>
+        </md-card-actions>
+    </md-card>
+    </div>
+
+    
+    <md-card ng-if="!loaderDanych && !lista.blend" flex="100">
+        <md-card-title layout="column">
+            <md-card-title-text>
+                <span class="md-headline">No blend found</span>
+            </md-card-title-text>
+        </md-card-title>
+    </md-card>
+
+</div>
+</div><!--zeby ng-view moglo miec min-width:100vh i nie rozciagalo przy layout=column wzdluz-->

@@ -1,0 +1,128 @@
+<div id="gura">
+<md-toolbar class="searchPanel md-raised toolbarFixed toolbarPrawyPadding" flex layout="row" layout-align="space-between center">
+    <h1 class="headerOtwarty" ng-class="{'headerZamkniety':szukajkaOtwarta}">Public sets <span ng-if="lista.sety">([[lista.ile]])</span>
+    </h1>
+    
+    <div layout="row" layout-align="end end">
+        
+        <div class="paginacja">
+            <md-button class="md-icon-button margin0" ng-if="lista.strona > 1" ng-click="przejdzDoStrony(+(lista.strona) - (1))">
+                <md-tooltip md-delay="100">previous page</md-tooltip>
+                <md-icon md-colors="::{ color: 'primary-50' }" aria-label="previous page" class="material-icons">keyboard_arrow_left</md-icon>
+            </md-button><md-input-container ng-if="lista.strony > 1" class="inputKontener">
+                <md-select ng-model="lista.strona" aria-label="Page">
+                    <md-option ng-repeat="str in strony" ng-value="str" ng-click="przejdzDoStrony(str)">
+                        p. [[str]]/[[lista.strony]]
+                    </md-option>
+                </md-select>
+            </md-input-container><md-button class="md-icon-button margin0" ng-if="lista.strony > 1 && lista.strona < lista.strony" ng-click="przejdzDoStrony(+(lista.strona) + (1))">
+                <md-tooltip md-delay="100">next page</md-tooltip>
+                <md-icon md-colors="::{ color: 'primary-50' }" aria-label="next page" class="material-icons">keyboard_arrow_right</md-icon>
+            </md-button>
+        </div>
+        
+        <form ng-submit="poszukej()">
+        <md-button type="submit" aria-label="search" class="md-icon-button margin0" ng-if="duze || szukajkaOtwarta">
+            <md-icon md-colors="::{ color: 'primary-50' }" class="material-icons">search</md-icon>
+        </md-button><md-input-container class="inputKontener szukajka paddingLR0" ng-class="{'szukajkaOtwarta':szukajkaOtwarta}">
+            <label md-colors="::{ color: 'primary-50' }" class="paddingLR0">search</label>
+            <input md-colors="::{ color: 'primary-50' }" class="paddingLR0" type="text" ng-model="szukejInput"/>
+        </md-input-container><md-button ng-click="zamknijSzukajke()" aria-label="search" class="md-icon-button closeSearchBtn" ng-class="{'closeSearchBtnOtwarty':szukajkaOtwarta}">
+            <md-icon md-colors="::{ color: 'primary-50' }" class="material-icons ">close</md-icon>
+        </md-button>
+        </form>
+        
+
+
+        <md-menu md-position-mode="target-right target">
+          <md-button aria-label="menu" class="md-icon-button margin0" ng-click="$mdMenu.open($event)">
+            <md-icon aria-label="..." class="material-icons">more_vert</md-icon>
+          </md-button>
+          <md-menu-content>
+            <md-menu-item>
+              <md-button ng-class="{'md-primary':sSort=='nazwa'}" ng-click="ustawSortowanie('nazwa')"> <span md-menu-align-target>sort by name</span></md-button>
+            </md-menu-item>
+            <md-menu-item>
+              <md-button ng-class="{'md-primary':sSort=='data'}" ng-click="ustawSortowanie('data')"> <span md-menu-align-target>sort by date</span></md-button>
+            </md-menu-item>
+            <md-menu-item>
+              <md-button ng-class="{'md-primary':sSort=='styl'}" ng-click="ustawSortowanie('styl')"> <span md-menu-align-target>sort by genre</span></md-button>
+            </md-menu-item>
+            <md-menu-item>
+              <md-button ng-class="{'md-primary':sDesc}" ng-click="toggleDesc()"> <span md-menu-align-target>descending</span></md-button>
+            </md-menu-item>
+            <md-menu-item hide-gt-xs>
+                <md-button  ng-click="poszukej()">
+                    <span md-menu-align-target>search</span>
+                </md-button>
+            </md-menu-item>
+          </md-menu-content>
+        </md-menu>
+    </div> 
+    
+    <md-progress-linear md-mode="indeterminate" ng-show="loaderDanych" class="loaderWtoolbarze md-accent md-hue-3"></md-progress-linear>
+</md-toolbar>
+<div layout="row" layout-wrap flex><!-- class="gtMd-2-ltMd-1" -->
+    
+
+    <md-card  layout="column" layout-align="space-between" flex="100" layout-wrap ng-if="lista.sety">
+        
+        <md-list>
+    
+    <!--<md-subheader class="md-no-sticky">Secondary Buttons</md-subheader>-->
+            <md-list-item class="secondary-button-padding" ng-click="przejdzDoNormalnie('othersSet/'+[[set.id]])" ng-repeat="set in lista.sety track by set.id">
+                <md-divider ng-if="!$last"></md-divider>
+                <div layout="row" layout-gt-xs="row" layout-padding layout-wrap layout-align="space-between" flex="100">
+                
+                    <div layout="column" layout-gt-xs="row" flex="80" flex-gt-xs="80" layout-align="center start" layout-align-gt-xs="start center">
+                                    <span style="padding:5px 15px 5px 0;line-height:1;font-size:1.2em;"  flex-gt-xs="40">[[ set.login ]] - [[set.nazwa]]</span>
+                                    <span style="padding:5px 15px 5px 0;line-height:1;"  flex-gt-xs="20">[[set.styl]]</span>
+                                    <span style="padding:5px 15px 5px 0;line-height:1;"  flex-gt-xs="20">no. of tracks: [[set.liczba_piosenek]]</span>
+                                    <span style="padding:5px 15px 5px 0;line-height:1;"  flex-gt-xs="20">[[set.data_dodania | date:'yyyy-MM-dd']]</span>
+                    </div>
+                    
+                    
+                    <div layout="column" layout-gt-xs="row" flex="20" flex-gt-xs="20" layout-align="center end" layout-align-gt-xs="end end">
+                        <div layout="row">
+                        <md-button class="md-icon-button margin0" ng-click="likeIt(set.id)">
+                            <md-tooltip md-delay="100" ng-if="set.lapka!='gora'">I like it</md-tooltip>
+                            <md-tooltip md-delay="100" ng-if="set.lapka=='gora'">I don't like it anymore</md-tooltip>
+                            <md-icon ng-hide="set.loaderUp" aria-label="..." class="material-icons" md-colors="set.lapka == 'gora' ? {color:'primary'} : {color:'grey'} ">thumb_up</md-icon>
+                            <md-progress-circular ng-show="set.loaderUp" md-diameter="24"></md-progress-circular>
+                        </md-button>
+                        <span md-colors="set.lapka == 'gora' ? {color:'primary'} : {color:'grey'} ">[[ set.l_lapek_gora ]]</span>
+                        </div>
+                    
+                        <div layout="row">
+                        <md-button class="md-icon-button margin0" ng-click="dislikeIt(set.id)">
+                            <md-tooltip md-delay="100" ng-if="set.lapka!='dol'">I don't like it</md-tooltip>
+                            <md-tooltip md-delay="100" ng-if="set.lapka=='dol'">I like it now</md-tooltip>
+                            <md-icon ng-hide="set.loaderDown" aria-label="..." class="material-icons" md-colors="set.lapka == 'dol' ? {color:'primary'} : {color:'grey'} ">thumb_down</md-icon>
+                            <md-progress-circular ng-show="set.loaderDown" md-diameter="24"></md-progress-circular>
+                        </md-button>
+                        <span md-colors="set.lapka == 'dol' ? {color:'primary'} : {color:'grey'} ">[[ set.l_lapek_dol ]]</span>
+                        </div>
+
+                    </div>
+                    
+                </div>
+
+
+    <!--<p>Click anywhere to fire the primary action, or the button to fire the secondary</p>
+    <md-button class="md-secondary" ng-click="doSecondaryAction($event)">More Info</md-button>-->
+            </md-list-item>
+  
+        </md-list>
+
+    </md-card>
+
+    <md-card ng-if="!loaderDanych && !lista.sety" flex="100">
+        <md-card-title layout="column">
+            <md-card-title-text>
+                <span class="md-headline">Your set list is empty</span>
+            </md-card-title-text>
+        </md-card-title>
+    </md-card>
+
+</div>
+</div><!--zeby ng-view moglo miec min-width:100vh i nie rozciagalo przy layout=column wzdluz-->

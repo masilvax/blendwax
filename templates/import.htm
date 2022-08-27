@@ -1,0 +1,45 @@
+<div id="gura">
+<md-toolbar class="searchPanel md-raised" flex layout="row" layout-align="start center">
+    <h1>Import from Discogs
+    </h1>
+    <md-progress-linear md-mode="indeterminate" ng-show="loaderDanych" class="loaderWtoolbarze md-accent md-hue-3"></md-progress-linear>
+</md-toolbar>
+<div layout="row" layout-wrap flex>
+    
+    <md-card flex="100">
+        <md-card-title layout="column">
+            <md-card-title-text>
+                <span class="md-headline">
+                <ul>
+                    <li>This application uses Discogs’ API but is not affiliated with, sponsored or endorsed by Discogs. ‘Discogs’ is a trademark of Zink Media, LLC.</li>
+                    <li>Press the START button to import or update your collection from Discogs.</li>
+                    <li>Due to Discogs’ request limits, only one release per second can be imported.</li>
+                    <li>Only those releases that are not present in BlendWax will be imported. If the release has been already imported to BlendWax by some other user, there's no need to send request to Discogs. The release will simply be added to your collection.</li>
+                    <li>You can stop the import at any moment and run it again later. Releases not imported during this import session will be imported in the next session.</li>
+                    <li>Import and update in BlendWax works only for vinyl releases.</li>
+                </ul>
+                </span>
+            </md-card-title-text>
+
+
+            
+        </md-card-title>
+
+
+        
+        <md-card-actions layout="column" layout-align="center center" style="margin-bottom:20px;">
+            <md-button ng-if="iButtonText!='stop'" ng-disabled="iButtonDisabled" ng-click="uruchomIportUpdate()" class="md-primary md-raised no-animate" aria-label="...">[[iButtonText]]
+            </md-button>
+            <md-button ng-if="iButtonText=='stop'" ng-disabled="iButtonDisabled" ng-click="zatrzymajImportUpdate()" class="md-primary md-raised no-animate" aria-label="...">[[iButtonText]]
+            </md-button>
+            
+            <md-button ng-disabled="true" layout="row" layout-align="center center" aria-label="...">
+                <md-progress-circular ng-if="iLoaderImport" md-diameter="24" aria-label="..."></md-progress-circular>
+                <span ng-if="koniec">finished</span>
+            </md-button>
+        </md-card-actions>
+
+    </md-card>
+    
+</div>
+</div><!--zeby ng-view moglo miec min-width:100vh i nie rozciagalo przy layout=column wzdluz-->

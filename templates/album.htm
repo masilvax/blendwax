@@ -1,0 +1,76 @@
+<div id="gura">
+<md-toolbar class="searchPanel padding0" flex layout="row" layout-align="start center">
+    <md-button class="md-icon-button" ng-href="#!myCollection"><md-icon aria-label="..." class="material-icons">arrow_backward</md-icon></md-button>
+    <h1>[[lista.album.artysta]] - [[lista.album.tytul]]</h1>
+    <md-progress-linear md-mode="indeterminate" ng-show="loaderDanych" class="loaderWtoolbarze md-accent md-hue-3"></md-progress-linear>
+</md-toolbar>
+<div layout="row" layout-gt-sm="row" layout-wrap flex><!-- class="gtMd-2-ltMd-1" -->
+    
+    
+    <md-card ng-if="lista.album" layout="row" layout-align="space-between" flex="100" layout-wrap>
+        
+        <md-card-title-media>
+            <div class="md-media-sm card-media obrazekPlytyResponsive" style="background: url('gfx/[[lista.album.discogs_id]].jpg') no-repeat 0% 0% / cover, url('gfx/record.png') no-repeat 0% 0% / cover;"></div>
+        </md-card-title-media>  
+        
+        <md-card-title layout="column">
+            <md-card-title-text>
+                <span class="md-headline">Label: [[lista.album.label]]</span>
+                <span class="md-subhead">cat no: [[lista.album.nr_kat]]</span>
+                <span class="md-subhead">year: [[lista.album.rok]]</span>
+            </md-card-title-text>
+            
+                <md-card-actions layout="row" layout-align="end center">
+                    <!--<md-button>Action 1</md-button>
+                    <md-button>Action 2</md-button>-->
+                </md-card-actions>
+
+        </md-card-title>
+
+    </md-card>
+    <md-card ng-if="lista.trackLista" layout="row" layout-align="space-between" flex="100" layout-wrap>
+
+        
+        <md-card-title layout="column">
+            <md-card-title-text>
+                <span class="md-headline">Tracklist:</span>
+                <span class="md-subhead">&nbsp;</span>
+            </md-card-title-text>
+            
+                <!--<md-card-actions layout="row" layout-align="end center">
+                    <md-button>Action 1</md-button>
+                    <md-button>Action 2</md-button>
+                </md-card-actions>-->
+                
+            <div ng-repeat="piosenka in lista.trackLista track by piosenka.id">
+                <md-divider ng-if="!$first"></md-divider>
+                <div class="piosenkaWTrackLiscie">[[piosenka.pozycja]] - [[piosenka.tytul]]</div>
+            </div>
+        </md-card-title>
+
+    </md-card>
+
+    <md-card ng-if="!loaderDanych && !lista.album" flex="100">
+        <md-card-title layout="column">
+            <md-card-title-text>
+                <span class="md-headline">No artist found</span>
+            </md-card-title-text>
+        </md-card-title>
+    </md-card>
+    <md-card ng-if="!loaderDanych && !lista.trackLista" flex="100">
+        <md-card-title layout="column">
+            <md-card-title-text>
+                <span class="md-headline">No tracklist found</span>
+            </md-card-title-text>
+        </md-card-title>
+    </md-card>
+    
+		<!--<adsense-directive 
+			ad-client="YOUR_CLIENT_ID"
+			ad-slot="YOUR_SLOT_ID" 
+			ad-format="auto"
+			css-style="display:inline-block;width:320px;height:50px;">
+		</adsense-directive>-->
+    
+</div>
+</div><!--zeby ng-view moglo miec min-width:100vh i nie rozciagalo przy layout=column wzdluz-->

@@ -1,0 +1,220 @@
+[21-Oct-2018 21:33:10 Europe/Warsaw] No consumer_key set for OAuthSimple
+[21-Oct-2018 21:33:11 Europe/Warsaw] No consumer_key set for OAuthSimple
+[21-Oct-2018 21:33:11 Europe/Warsaw] No consumer_key set for OAuthSimple
+[21-Oct-2018 21:33:12 Europe/Warsaw] No consumer_key set for OAuthSimple
+[21-Oct-2018 21:34:41 Europe/Warsaw] No consumer_key set for OAuthSimple
+[21-Oct-2018 21:34:56 Europe/Warsaw] No consumer_key set for OAuthSimple
+[21-Oct-2018 21:34:57 Europe/Warsaw] No consumer_key set for OAuthSimple
+[21-Oct-2018 21:34:57 Europe/Warsaw] No consumer_key set for OAuthSimple
+[21-Oct-2018 21:35:48 Europe/Warsaw] PHP Fatal error:  Cannot access empty property in /core/http_import.php on line 22
+[22-Oct-2018 07:52:45 Europe/Warsaw] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING, expecting ')' in /core/http_import.php on line 22
+[22-Oct-2018 07:52:46 Europe/Warsaw] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING, expecting ')' in /core/http_import.php on line 22
+[22-Oct-2018 10:00:33 Europe/Warsaw] PHP Parse error:  syntax error, unexpected T_PUBLIC in /core/http_import.php on line 224
+[26-Oct-2018 21:37:00 Europe/Warsaw] PHP Parse error:  syntax error, unexpected '[', expecting ')' in /core/http_kolekcja.php on line 21
+[26-Oct-2018 21:39:56 Europe/Warsaw] PHP Parse error:  syntax error, unexpected T_VARIABLE, expecting T_FUNCTION in /core/http_kolekcja.php on line 17
+[30-Oct-2018 20:04:40 Europe/Warsaw] PHP Parse error:  syntax error, unexpected T_PUBLIC in /core/http_blendy.php on line 84
+[18-Nov-2018 18:15:03 Europe/Warsaw] PHP Parse error:  syntax error, unexpected '{' in /core/session.php on line 37
+[18-Nov-2018 18:15:15 Europe/Warsaw] PHP Parse error:  syntax error, unexpected '{' in /core/session.php on line 37
+[18-Nov-2018 18:15:28 Europe/Warsaw] PHP Parse error:  syntax error, unexpected '{' in /core/session.php on line 37
+[18-Nov-2018 18:15:34 Europe/Warsaw] PHP Parse error:  syntax error, unexpected '{' in /core/session.php on line 37
+[18-Nov-2018 18:15:50 Europe/Warsaw] PHP Parse error:  syntax error, unexpected '{' in /core/session.php on line 37
+[18-Nov-2018 18:16:46 Europe/Warsaw] PHP Parse error:  syntax error, unexpected '=' in /core/session.php on line 38
+[18-Nov-2018 18:17:39 Europe/Warsaw] PHP Fatal error:  Call to a member function getUzytkownikByLogin() on a non-object in /core/session.php on line 38
+[19-Nov-2018 13:17:24 Europe/Warsaw] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /core/http_rejestracja.php on line 31
+[19-Nov-2018 21:13:50 Europe/Warsaw] PHP Parse error:  syntax error, unexpected '=' in /core/http_rejestracja.php on line 52
+[19-Nov-2018 21:14:48 Europe/Warsaw] PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at /core/http_rejestracja.php:2) in /core/session.php on line 11
+[19-Nov-2018 21:25:02 Europe/Warsaw] PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at /core/http_rejestracja.php:2) in /core/http_rejestracja.php on line 12
+[19-Nov-2018 21:25:02 Europe/Warsaw] PHP Fatal error:  Call to a member function getUzytkownikByLogin() on a non-object in /core/http_rejestracja.php on line 34
+[19-Nov-2018 21:28:17 Europe/Warsaw] PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at /core/http_rejestracja.php:2) in /core/http_rejestracja.php on line 5
+[19-Nov-2018 21:28:17 Europe/Warsaw] PHP Fatal error:  Call to a member function getUzytkownikByLogin() on a non-object in /core/http_rejestracja.php on line 33
+[19-Nov-2018 21:29:09 Europe/Warsaw] PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at /core/http_rejestracja.php:2) in /core/http_rejestracja.php on line 12
+[19-Nov-2018 21:29:09 Europe/Warsaw] PHP Fatal error:  Call to a member function saveOrUpdateUzytkownik() on a non-object in /core/http_rejestracja.php on line 40
+[19-Nov-2018 21:29:51 Europe/Warsaw] PHP Fatal error:  Call to a member function saveOrUpdateUzytkownik() on a non-object in /core/http_rejestracja.php on line 39
+[06-Dec-2018 17:11:37 Europe/Warsaw] PHP Fatal error:  Uncaught Error: Call to undefined function jsonp_decode() in /core/http_sety.php:151
+Stack trace:
+#0 /core/http_sety.php(252): HttpSety->zapiszSet()
+#1 {main}
+  thrown in /core/http_sety.php on line 151
+[06-Dec-2018 17:41:13 Europe/Warsaw] PHP Fatal error:  Uncaught Error: Cannot use object of type stdClass as array in /core/http_sety.php:161
+Stack trace:
+#0 /core/http_sety.php(264): HttpSety->zapiszSet()
+#1 {main}
+  thrown in /core/http_sety.php on line 161
+[06-Dec-2018 17:43:29 Europe/Warsaw] PHP Fatal error:  Uncaught Error: Cannot use object of type stdClass as array in /core/http_sety.php:161
+Stack trace:
+#0 /core/http_sety.php(264): HttpSety->zapiszSet()
+#1 {main}
+  thrown in /core/http_sety.php on line 161
+[13-Dec-2018 15:15:34 Europe/Warsaw] PHP Parse error:  syntax error, unexpected '{', expecting '(' in /core/http_sety.php on line 300
+[13-Dec-2018 16:13:13 Europe/Warsaw] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE) in /core/db.php on line 631
+[13-Dec-2018 16:13:18 Europe/Warsaw] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE) in /core/db.php on line 631
+[13-Dec-2018 17:37:18 Europe/Warsaw] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /core/http_sety.php on line 307
+[13-Dec-2018 17:37:24 Europe/Warsaw] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /core/http_sety.php on line 307
+[17-Dec-2018 22:21:59 Europe/Warsaw] PHP Parse error:  syntax error, unexpected '.' in /core/http_sety.php on line 145
+[17-Dec-2018 22:22:07 Europe/Warsaw] PHP Parse error:  syntax error, unexpected '.' in /core/http_sety.php on line 145
+[18-Dec-2018 17:06:14 Europe/Warsaw] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE) in /core/http_blendy.php on line 249
+[04-Feb-2019 09:01:14 Europe/Warsaw] Missing oauth_secret for supplied oauth_token in OAuthSimple.signatures
+[04-Feb-2019 09:01:14 Europe/Warsaw] PHP Fatal error:  Uncaught OAuthSimpleException in /oauth/OAuthSimple.php:209
+Stack trace:
+#0 /oauth/OAuthSimple.php(271): OAuthSimple->signatures(Array)
+#1 /oauth/dyskox.php(147): OAuthSimple->sign(Array)
+#2 {main}
+  thrown in /oauth/OAuthSimple.php on line 209
+[04-Feb-2019 09:01:56 Europe/Warsaw] Missing oauth_secret for supplied oauth_token in OAuthSimple.signatures
+[04-Feb-2019 09:01:56 Europe/Warsaw] PHP Fatal error:  Uncaught OAuthSimpleException in /oauth/OAuthSimple.php:209
+Stack trace:
+#0 /oauth/OAuthSimple.php(271): OAuthSimple->signatures(Array)
+#1 /oauth/dyskox.php(147): OAuthSimple->sign(Array)
+#2 {main}
+  thrown in /oauth/OAuthSimple.php on line 209
+[05-Feb-2019 20:39:01 Europe/Warsaw] Missing oauth_secret for supplied oauth_token in OAuthSimple.signatures
+[05-Feb-2019 20:39:01 Europe/Warsaw] PHP Fatal error:  Uncaught OAuthSimpleException in /oauth/OAuthSimple.php:209
+Stack trace:
+#0 /oauth/OAuthSimple.php(271): OAuthSimple->signatures(Array)
+#1 /oauth/dyskox.php(147): OAuthSimple->sign(Array)
+#2 {main}
+  thrown in /oauth/OAuthSimple.php on line 209
+[05-Feb-2019 20:43:02 Europe/Warsaw] Missing oauth_secret for supplied oauth_token in OAuthSimple.signatures
+[05-Feb-2019 20:43:02 Europe/Warsaw] PHP Fatal error:  Uncaught OAuthSimpleException in /oauth/OAuthSimple.php:209
+Stack trace:
+#0 /oauth/OAuthSimple.php(271): OAuthSimple->signatures(Array)
+#1 /oauth/dyskox.php(147): OAuthSimple->sign(Array)
+#2 {main}
+  thrown in /oauth/OAuthSimple.php on line 209
+[05-Feb-2019 22:16:02 Europe/Warsaw] Missing oauth_secret for supplied oauth_token in OAuthSimple.signatures
+[05-Feb-2019 22:16:02 Europe/Warsaw] PHP Fatal error:  Uncaught OAuthSimpleException in /oauth/OAuthSimple.php:209
+Stack trace:
+#0 /oauth/OAuthSimple.php(271): OAuthSimple->signatures(Array)
+#1 /oauth/dyskox.php(147): OAuthSimple->sign(Array)
+#2 {main}
+  thrown in /oauth/OAuthSimple.php on line 209
+[06-Feb-2019 20:06:14 Europe/Warsaw] Missing oauth_secret for supplied oauth_token in OAuthSimple.signatures
+[06-Feb-2019 20:06:14 Europe/Warsaw] PHP Fatal error:  Uncaught OAuthSimpleException in /oauth/OAuthSimple.php:209
+Stack trace:
+#0 /oauth/OAuthSimple.php(271): OAuthSimple->signatures(Array)
+#1 /oauth/dyskox.php(147): OAuthSimple->sign(Array)
+#2 {main}
+  thrown in /oauth/OAuthSimple.php on line 209
+[06-Feb-2019 20:08:01 Europe/Warsaw] Missing oauth_secret for supplied oauth_token in OAuthSimple.signatures
+[06-Feb-2019 20:08:01 Europe/Warsaw] PHP Fatal error:  Uncaught OAuthSimpleException in /oauth/OAuthSimple.php:209
+Stack trace:
+#0 /oauth/OAuthSimple.php(271): OAuthSimple->signatures(Array)
+#1 /oauth/dyskox.php(147): OAuthSimple->sign(Array)
+#2 {main}
+  thrown in /oauth/OAuthSimple.php on line 209
+[06-Feb-2019 20:12:09 Europe/Warsaw] Missing oauth_secret for supplied oauth_token in OAuthSimple.signatures
+[06-Feb-2019 20:12:09 Europe/Warsaw] PHP Fatal error:  Uncaught OAuthSimpleException in /oauth/OAuthSimple.php:209
+Stack trace:
+#0 /oauth/OAuthSimple.php(271): OAuthSimple->signatures(Array)
+#1 /oauth/dyskox.php(147): OAuthSimple->sign(Array)
+#2 {main}
+  thrown in /oauth/OAuthSimple.php on line 209
+[06-Feb-2019 20:13:53 Europe/Warsaw] Missing oauth_secret for supplied oauth_token in OAuthSimple.signatures
+[06-Feb-2019 20:13:53 Europe/Warsaw] PHP Fatal error:  Uncaught OAuthSimpleException in /oauth/OAuthSimple.php:209
+Stack trace:
+#0 /oauth/OAuthSimple.php(271): OAuthSimple->signatures(Array)
+#1 /oauth/dyskox.php(147): OAuthSimple->sign(Array)
+#2 {main}
+  thrown in /oauth/OAuthSimple.php on line 209
+[06-Feb-2019 20:14:27 Europe/Warsaw] Missing oauth_secret for supplied oauth_token in OAuthSimple.signatures
+[06-Feb-2019 20:14:27 Europe/Warsaw] PHP Fatal error:  Uncaught OAuthSimpleException in /oauth/OAuthSimple.php:209
+Stack trace:
+#0 /oauth/OAuthSimple.php(271): OAuthSimple->signatures(Array)
+#1 /oauth/dyskox.php(147): OAuthSimple->sign(Array)
+#2 {main}
+  thrown in /oauth/OAuthSimple.php on line 209
+[07-Feb-2019 07:42:26 Europe/Warsaw] PHP Fatal error:  Uncaught Error: Call to undefined function delay() in /oauth/dyskox.php:108
+Stack trace:
+#0 {main}
+  thrown in /oauth/dyskox.php on line 108
+[07-Feb-2019 07:42:58 Europe/Warsaw] PHP Warning:  Cannot modify header information - headers already sent by (output started at /oauth/dyskox.php:106) in /oauth/dyskox.php on line 124
+[07-Feb-2019 07:43:18 Europe/Warsaw] PHP Warning:  Cannot modify header information - headers already sent by (output started at /oauth/dyskox.php:106) in /oauth/dyskox.php on line 124
+[07-Feb-2019 07:51:30 Europe/Warsaw] PHP Warning:  Cannot modify header information - headers already sent by (output started at /oauth/dyskox.php:150) in /oauth/dyskox.php on line 253
+[07-Feb-2019 08:12:52 Europe/Warsaw] PHP Warning:  Cannot modify header information - headers already sent by (output started at /oauth/dyskox.php:110) in /oauth/dyskox.php on line 127
+[07-Feb-2019 08:15:57 Europe/Warsaw] PHP Warning:  Cannot modify header information - headers already sent by (output started at /oauth/dyskox.php:110) in /oauth/dyskox.php on line 130
+[07-Feb-2019 21:12:59 Europe/Warsaw] Missing oauth_secret for supplied oauth_token in OAuthSimple.signatures
+[07-Feb-2019 21:12:59 Europe/Warsaw] PHP Fatal error:  Uncaught OAuthSimpleException in /oauth/OAuthSimple.php:209
+Stack trace:
+#0 /oauth/OAuthSimple.php(271): OAuthSimple->signatures(Array)
+#1 /oauth/dyskox.php(164): OAuthSimple->sign(Array)
+#2 {main}
+  thrown in /oauth/OAuthSimple.php on line 209
+[07-Feb-2019 21:15:22 Europe/Warsaw] Missing oauth_secret for supplied oauth_token in OAuthSimple.signatures
+[07-Feb-2019 21:15:22 Europe/Warsaw] PHP Fatal error:  Uncaught OAuthSimpleException in /oauth/OAuthSimple.php:209
+Stack trace:
+#0 /oauth/OAuthSimple.php(271): OAuthSimple->signatures(Array)
+#1 /oauth/dyskox.php(164): OAuthSimple->sign(Array)
+#2 {main}
+  thrown in /oauth/OAuthSimple.php on line 209
+[08-Feb-2019 20:37:37 Europe/Warsaw] Missing oauth_secret for supplied oauth_token in OAuthSimple.signatures
+[08-Feb-2019 20:37:37 Europe/Warsaw] PHP Fatal error:  Uncaught OAuthSimpleException in /oauth/OAuthSimple.php:209
+Stack trace:
+#0 /oauth/OAuthSimple.php(271): OAuthSimple->signatures(Array)
+#1 /oauth/dyskox.php(164): OAuthSimple->sign(Array)
+#2 {main}
+  thrown in /oauth/OAuthSimple.php on line 209
+[08-Feb-2019 20:38:02 Europe/Warsaw] Missing oauth_secret for supplied oauth_token in OAuthSimple.signatures
+[08-Feb-2019 20:38:02 Europe/Warsaw] PHP Fatal error:  Uncaught OAuthSimpleException in /oauth/OAuthSimple.php:209
+Stack trace:
+#0 /oauth/OAuthSimple.php(271): OAuthSimple->signatures(Array)
+#1 /oauth/dyskox.php(164): OAuthSimple->sign(Array)
+#2 {main}
+  thrown in /oauth/OAuthSimple.php on line 209
+[08-Feb-2019 20:38:42 Europe/Warsaw] Missing oauth_secret for supplied oauth_token in OAuthSimple.signatures
+[08-Feb-2019 20:38:42 Europe/Warsaw] PHP Fatal error:  Uncaught OAuthSimpleException in /oauth/OAuthSimple.php:209
+Stack trace:
+#0 /oauth/OAuthSimple.php(271): OAuthSimple->signatures(Array)
+#1 /oauth/dyskox.php(164): OAuthSimple->sign(Array)
+#2 {main}
+  thrown in /oauth/OAuthSimple.php on line 209
+[08-Feb-2019 20:44:25 Europe/Warsaw] Missing oauth_secret for supplied oauth_token in OAuthSimple.signatures
+[08-Feb-2019 20:44:25 Europe/Warsaw] PHP Fatal error:  Uncaught OAuthSimpleException in /oauth/OAuthSimple.php:209
+Stack trace:
+#0 /oauth/OAuthSimple.php(271): OAuthSimple->signatures(Array)
+#1 /oauth/dyskox.php(164): OAuthSimple->sign(Array)
+#2 {main}
+  thrown in /oauth/OAuthSimple.php on line 209
+[11-Feb-2019 17:18:50 Europe/Warsaw] Missing oauth_secret for supplied oauth_token in OAuthSimple.signatures
+[11-Feb-2019 17:18:50 Europe/Warsaw] PHP Fatal error:  Uncaught OAuthSimpleException in /oauth/OAuthSimple.php:209
+Stack trace:
+#0 /oauth/OAuthSimple.php(271): OAuthSimple->signatures(Array)
+#1 /oauth/dyskox.php(123): OAuthSimple->sign(Array)
+#2 {main}
+  thrown in /oauth/OAuthSimple.php on line 209
+[11-Feb-2019 17:22:30 Europe/Warsaw] Missing oauth_secret for supplied oauth_token in OAuthSimple.signatures
+[11-Feb-2019 17:22:30 Europe/Warsaw] PHP Fatal error:  Uncaught OAuthSimpleException in /oauth/OAuthSimple.php:209
+Stack trace:
+#0 /oauth/OAuthSimple.php(271): OAuthSimple->signatures(Array)
+#1 /oauth/dyskox.php(123): OAuthSimple->sign(Array)
+#2 {main}
+  thrown in /oauth/OAuthSimple.php on line 209
+[12-Feb-2019 08:05:25 Europe/Warsaw] PHP Warning:  Cannot modify header information - headers already sent by (output started at /oauth/dyskox_oauth_debug.php:83) in /oauth/dyskox_oauth_debug.php on line 96
+[12-Feb-2019 08:09:40 Europe/Warsaw] PHP Warning:  Cannot modify header information - headers already sent by (output started at /oauth/dyskox_oauth_debug.php:116) in /oauth/dyskox_oauth_debug.php on line 188
+[12-Feb-2019 08:15:50 Europe/Warsaw] PHP Warning:  Cannot modify header information - headers already sent by (output started at /oauth/dyskox_oauth_debug.php:116) in /oauth/dyskox_oauth_debug.php on line 188
+[12-Feb-2019 08:22:30 Europe/Warsaw] PHP Warning:  Cannot modify header information - headers already sent by (output started at /oauth/dyskox_oauth_debug.php:116) in /oauth/dyskox_oauth_debug.php on line 188
+[12-Feb-2019 08:28:23 Europe/Warsaw] PHP Warning:  Cannot modify header information - headers already sent by (output started at /oauth/dyskox_oauth_debug.php:116) in /oauth/dyskox_oauth_debug.php on line 188
+[12-Feb-2019 08:29:11 Europe/Warsaw] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'login' cannot be null in /core/db.php:45
+Stack trace:
+#0 /core/db.php(45): PDOStatement->execute()
+#1 /core/db.php(78): DB->query('INSERT INTO uzy...', Array)
+#2 /core/db.php(209): DB->insert('uzytkownicy', Array)
+#3 /oauth/dyskox_oauth_debug.php(183): DB->saveOrUpdateUzytkownik(Array)
+#4 {main}
+  thrown in /core/db.php on line 45
+[12-Feb-2019 08:35:45 Europe/Warsaw] PHP Warning:  Cannot modify header information - headers already sent by (output started at /oauth/dyskox_oauth_debug.php:116) in /oauth/dyskox_oauth_debug.php on line 188
+[12-Feb-2019 08:46:53 Europe/Warsaw] PHP Warning:  Cannot modify header information - headers already sent by (output started at /oauth/dyskox_oauth_debug.php:116) in /oauth/dyskox_oauth_debug.php on line 188
+[12-Feb-2019 09:10:01 Europe/Warsaw] PHP Warning:  Cannot modify header information - headers already sent by (output started at /oauth/dyskox_oauth_debug.php:116) in /oauth/dyskox_oauth_debug.php on line 188
+[12-Feb-2019 20:34:12 Europe/Warsaw] PHP Warning:  Cannot modify header information - headers already sent by (output started at /oauth/dyskox_oauth_debug.php:116) in /oauth/dyskox_oauth_debug.php on line 188
+[15-Feb-2019 19:27:17 Europe/Warsaw] PHP Warning:  Cannot modify header information - headers already sent by (output started at /oauth/dyskox_oauth_debug.php:116) in /oauth/dyskox_oauth_debug.php on line 188
+[15-Feb-2019 22:38:03 Europe/Warsaw] PHP Warning:  Cannot modify header information - headers already sent by (output started at /oauth/dyskox_oauth_debug.php:116) in /oauth/dyskox_oauth_debug.php on line 188
+[15-Feb-2019 22:40:13 Europe/Warsaw] PHP Warning:  Cannot modify header information - headers already sent by (output started at /oauth/dyskox_oauth_debug.php:116) in /oauth/dyskox_oauth_debug.php on line 188
+[15-Feb-2019 22:41:25 Europe/Warsaw] PHP Warning:  Cannot modify header information - headers already sent by (output started at /oauth/dyskox_oauth_debug.php:116) in /oauth/dyskox_oauth_debug.php on line 188
+[15-Feb-2019 22:44:42 Europe/Warsaw] PHP Warning:  Cannot modify header information - headers already sent by (output started at /oauth/dyskox_oauth_debug.php:116) in /oauth/dyskox_oauth_debug.php on line 188
+[18-Feb-2019 17:46:55 Europe/Warsaw] Missing oauth_secret for supplied oauth_token in OAuthSimple.signatures
+[18-Feb-2019 17:46:55 Europe/Warsaw] PHP Fatal error:  Uncaught OAuthSimpleException in /oauth/OAuthSimple.php:209
+Stack trace:
+#0 /oauth/OAuthSimple.php(271): OAuthSimple->signatures(Array)
+#1 /oauth/dyskox.php(123): OAuthSimple->sign(Array)
+#2 {main}
+  thrown in /oauth/OAuthSimple.php on line 209
+[17-May-2019 09:59:29 Europe/Warsaw] Missing oauth_secret for supplied oauth_token in OAuthSimple.signatures

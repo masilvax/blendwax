@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /css/
+Disallow: /core/
+Disallow: /js/
+Disallow: /logi/
+Disallow: /oauth/
+Disallow: /templates/
+Disallow: /tmp/
+Sitemap: http://blendwax.com/sitemap_location.xml

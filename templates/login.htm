@@ -1,0 +1,42 @@
+<!--<div class="owijaczLogowania" md-colors="::{ background: 'grey-800' }" flex layout="column" layout-align="center center">-->
+  
+    <div layout="row" layout-align="center center" flex class="tlo">
+        
+        
+
+        <div layout="column" layout-align="center center" flex="100" flex-gt-xs="40">
+        
+        <h1 class="h1Logo palec" ng-click="przejdzDoNormalnie('home')"><span class="thin">Blend</span><span class="bold">Wax</span></h1>
+           
+           <md-card layout="column" flex>
+                <md-card-content layout="column" flex>
+                    <form ng-submit="zaloguj()">
+                    <div layout="row" layout-align="center">
+                        <md-input-container>
+                            <label>username</label>
+                            <input type="text" ng-model="login"/>
+                        </md-input-container>
+                    </div>
+                    <div layout="row" layout-align="center">
+                        <md-input-container>
+                            <label>password</label>
+                            <input type="password" ng-model="haslo"/>
+                        </md-input-container>
+                    </div>
+
+                    <div layout="row" layout-align="center">
+                        <md-button type="submit" class="md-primary md-raised">
+                            Log in
+                        </md-button>
+                    </div>
+                    </form>
+                </md-card-content>
+            </md-card>
+        
+        </div>
+        
+ 
+
+    </div>
+
+<!--</div>-->

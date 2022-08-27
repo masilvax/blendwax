@@ -1,0 +1,98 @@
+<div id="gura">
+<md-toolbar class="searchPanel padding0" flex layout="row" layout-align="space-between center">
+
+    <div layout="row" layout-align="start center">
+
+    <md-button class="md-icon-button" ng-href="#!othersBlends"><md-icon aria-label="..." class="material-icons">arrow_backward</md-icon></md-button>
+    <h1>[[ lista.blend.login ]]'s blend
+    </h1>
+    
+    </div>
+    
+                    <div layout="row" flex="20" layout-align="end center" class="lapkiWToolbarze">
+                        <div layout="row" layout-align="center center">
+                        <md-button class="md-icon-button margin0" ng-click="likeIt(lista.blend.id)">
+                            <md-tooltip md-delay="100" ng-if="lista.blend.lapka!='gora'">I like it</md-tooltip>
+                            <md-tooltip md-delay="100" ng-if="lista.blend.lapka=='gora'">I don't like it anymore</md-tooltip>
+                            <md-icon ng-hide="loaderUp" aria-label="..." class="material-icons" md-colors="lista.blend.lapka == 'gora' ? {color:'primary-50'} : {color:'primary-300'} ">thumb_up</md-icon>
+                            <md-progress-circular class="md-accent" ng-show="loaderUp" md-diameter="24"></md-progress-circular>
+                        </md-button>
+                        <span md-colors="lista.blend.lapka == 'gora' ? {color:'primary-50'} : {color:'primary-300'} ">[[ lista.blend.l_lapek_gora ]]</span>
+                        </div>
+                    
+                        <div layout="row" layout-align="center center">
+                        <md-button class="md-icon-button margin0" ng-click="dislikeIt(lista.blend.id)">
+                            <md-tooltip md-delay="100" ng-if="lista.blend.lapka!='dol'">I don't like it</md-tooltip>
+                            <md-tooltip md-delay="100" ng-if="lista.blend.lapka=='dol'">I like it now</md-tooltip>
+                            <md-icon ng-hide="loaderDown" aria-label="..." class="material-icons" md-colors="lista.blend.lapka == 'dol' ? {color:'primary-50'} : {color:'primary-300'} ">thumb_down</md-icon>
+                            <md-progress-circular class="md-accent" ng-show="loaderDown" md-diameter="24"></md-progress-circular>
+                        </md-button>
+                        <span md-colors="lista.blend.lapka == 'dol' ? {color:'primary-50'} : {color:'primary-300'} ">[[ lista.blend.l_lapek_dol ]]</span>
+                        </div>
+
+                    </div>
+    <md-progress-linear md-mode="indeterminate" ng-show="loaderDanych" class="loaderWtoolbarze md-accent md-hue-3"></md-progress-linear>
+</md-toolbar>
+<div layout="column" layout-gt-xs="row" layout-fill flex><!-- class="gtMd-2-ltMd-1" -->
+    
+    <div flex="nogrow" flex-gt-xs="33">
+    <md-card ng-if="lista.blend" flex="nogrow">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">[[ lista.blend.artysta1 ]]</span>
+            <span class="md-subhead">[[ lista.blend.album1 ]]</span>
+            <span class="md-subhead">[[ lista.blend.pozycja1 ]] - [[ lista.blend.piosenka1 ]]</span>
+          </md-card-title-text>
+          <md-card-title-media>
+            <div class="md-media-sm card-media" style="background: url('gfx/[[lista.blend.discogs_id1]].jpg') no-repeat 0% 0% / cover, url('gfx/record.png') no-repeat 0% 0% / cover;"></div>
+          </md-card-title-media>
+        </md-card-title>
+        
+    </md-card>
+    </div>
+    
+    <div flex="nogrow" flex-gt-xs="33">
+    <md-card ng-if="lista.blend" layout="column" layout-align="space-between"  flex="nogrow" layout-wrap>
+
+        
+        <md-card-title layout="column" flex="nogrow">
+
+                <md-input-container class="szer99proc" style="margin-bottom:0;">
+                    <label>Transition description:</label>
+                    <textarea type="text" ng-model="lista.blend.opis" ng-disabled="!edycja"></textarea>
+                </md-input-container>
+
+            
+
+        </md-card-title>
+
+    </md-card>
+    </div>
+    
+    <div flex="nogrow" flex-gt-xs="33">
+    <md-card ng-if="lista.blend" flex="nogrow">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">[[ lista.blend.artysta2 ]]</span>
+            <span class="md-subhead">[[ lista.blend.album2 ]]</span>
+            <span class="md-subhead">[[ lista.blend.pozycja2 ]] - [[ lista.blend.piosenka2 ]]</span>
+          </md-card-title-text>
+          <md-card-title-media flex="nogrow">
+            <div class="md-media-sm card-media" style="background: url('gfx/[[lista.blend.discogs_id2]].jpg') no-repeat 0% 0% / cover, url('gfx/record.png') no-repeat 0% 0% / cover;"></div>
+          </md-card-title-media>
+        </md-card-title>
+
+    </md-card>
+    </div>
+    
+    
+    <md-card ng-if="!loaderDanych && !lista.blend" flex="100">
+        <md-card-title layout="column">
+            <md-card-title-text>
+                <span class="md-headline">No blend found</span>
+            </md-card-title-text>
+        </md-card-title>
+    </md-card>
+
+</div>
+</div><!--zeby ng-view moglo miec min-width:100vh i nie rozciagalo przy layout=column wzdluz-->

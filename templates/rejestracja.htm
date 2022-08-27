@@ -1,0 +1,64 @@
+<!--<div class="owijaczLogowania" md-colors="::{ background: 'grey-800' }" flex layout="column" layout-align="center center">-->
+  
+    <div layout="row" layout-align="center center" flex class="tlo">
+        
+        
+
+        <div layout="column" layout-align="center center" flex="100" flex-gt-xs="40">
+        
+        <h1 class="h1Logo palec" ng-click="przejdzDoNormalnie('home')"><span class="thin">Blend</span><span class="bold">Wax</span></h1>
+           
+                    <div flex-gt-xs="50" layout="column" layout-align="center center">
+                        <md-card>
+                        
+                        <md-card-title layout="column">
+                            <md-card-title-text>
+                                <span class="md-headline">Please set a password for BlendWax</span>
+                            </md-card-title-text>
+                        </md-card-title>
+                        
+                        <form name="formularzRejestracyjny" ng-submit="zarejestruj()">
+                        <md-card-content layout="column" layout-align="center center">
+                            <md-input-container>
+                                <label>Password</label>
+                                <input name="haslo" ng-model="haslo" required type="password">
+                                <div ng-messages="formularzRejestracyjny.haslo.$error">
+                                    <div ng-message="required">Required</div>
+                                </div>
+                            </md-input-container>
+                            
+                            <md-input-container>
+                                <label>Confirm password</label>
+                                <input name="haslo2" ng-model="haslo2" required type="password">
+                                <div ng-messages="formularzRejestracyjny.haslo2.$error">
+                                    <div ng-message="required">Required</div>
+                                </div>
+                            </md-input-container>
+                            
+                            <p style="text-align:justify">In order to log in use your discogs username and above password</p>
+                            <p style="text-align:justify">BlendWax does not collect any personal data such as names or e-mails. The only data we store is your Discogs username and your collection (you need to import the collection after first log in). We have absolutly no interest in storing your personal data. Although the ssl certificate is not currently used by our application, it is advised to set a password that differs from your passwords used in other applications.</p>
+                            
+                            
+                        </md-card-content>
+                            
+                        <md-card-actions layout="row" layout-align="center center">
+                            <md-button type="submit" layout="row" layout-align="center center">
+                                <span ng-hide="kontakt.loader">Create an account</span>
+                                <md-progress-circular ng-show="kontakt.loader" md-diameter="24"></md-progress-circular>
+                            </md-button>
+                        </md-card-actions>
+                    
+                        </form>
+                        
+                        
+                        </md-card>
+                        
+                    </div>
+        
+        </div>
+        
+ 
+
+    </div>
+
+<!--</div>-->

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <meta name="description" content="WebApp for djs who prefer vinyl to other medium. Easy way to manage your collection and track transitions. Also a set maker and a set manager."/>
+        <title>BlendWax - Vinyl dj's manager of track transitions</title>
+        <!--<link rel="stylesheet" href="css/bootstrap.css">-->
+        <link rel="stylesheet" href="css/angular-material.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="icon" type="image/png" href="gfx/blendwaxIko3.png">
+        
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:image" content="http://blendwax.com/gfx/fbShareImageSquare.jpg" />
+        <meta property="og:image:width" content="630" />
+        <meta property="og:image:height" content="630" />
+	<meta property="og:image" content="http://blendwax.com/gfx/fbShareImage.jpg" />
+        <meta property="og:image:width" content="1280" />
+        <meta property="og:image:height" content="630" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="BlendWax - Vinyl dj's manager of track transitions" />
+	<meta property="og:description" content="WebApp for djs who prefer vinyl to other medium. Easy way to manage your collection and track transitions. Also a set maker and a set manager." />
+	<meta property="og:url" content="http://blendwax.com/" />
+	<meta property="og:site_name" content="BlendWax - Vinyl dj's manager of track transitions" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:description" content="WebApp for djs who prefer vinyl to other medium. Easy way to manage your collection and track transitions. Also a set maker and a set manager." />
+	<meta name="twitter:title" content="BlendWax - Vinyl dj's manager of track transitions" />
+
+        <script src="js/angular.min.js" defer></script>
+        <script src="js/angular-animate.min.js" defer></script>
+        <script src="js/angular-aria.min.js" defer></script>
+        <script src="js/angular-material.min.js" defer></script>
+        <script src="js/angular-route.min.js" defer></script>
+        <script src="js/angular-scroll.min.js" defer></script>
+        <script src="js/angular-sanitize.min.js" defer></script>
+        <script src="js/angular-messages.min.js" defer></script>
+        <script src="js/ng-adsense.js" defer></script>
+        <script src="js/app/main.js" defer></script>
+        <script src="js/app/mojaKolekcja.js" defer></script>
+        <script src="js/app/album.js" defer></script>
+        <script src="js/app/mojeBlendy.js" defer></script>
+        <script src="js/app/blend.js" defer></script>
+        <script src="js/app/mojeSety.js" defer></script>
+        <script src="js/app/set.js" defer></script>
+        <script src="js/app/import.js" defer></script>
+        <script src="js/app/rejestracja.js" defer></script>
+        <script src="js/app/cudzeSety.js" defer></script>
+        <script src="js/app/cudzySet.js" defer></script>
+        <script src="js/app/cudzeBlendy.js" defer></script>
+        <script src="js/app/cudzyBlend.js" defer></script>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,500,400,700&amp;subset=latin-ext" rel="stylesheet"> 
+    
+    </head>
+
+    <body ng-app="blendwax" ng-controller="mainCtrl" md-theme="default" layout="row" layout-align="center" ng-cloak="" id="ciao" scroll>
+
+<!-- navi i guzik -->
+<md-sidenav ng-if="kto"
+  md-component-id="left"
+  class="md-sidenav-right"
+  
+  md-is-locked-open="$mdMedia('gt-sm')"
+  md-whiteframe="4" layout="column"
+  md-colors="::{ color: 'primary-50'  }">
+
+        <div layout="row" layout-align="space-between center" ng-click="przejdzDo('home')" class="palec logoWMenu">
+            <div flex="25">
+                    <md-icon md-colors="::{ color: 'primary-50' }" aria-label="historia" class="material-icons">home</md-icon>
+            </div>
+            <div md-colors="::{ color: 'primary-50' }" flex="75" hide-xs class="font1em" style="text-transform:none">
+                <span class="thin">Blend</span><span class="bold">Wax</span><br/>
+                <span class="font05em">[[ kto ]]</span>
+            </div>
+        </div>
+  
+        <!--<div layout="row" layout-align="space-between center">
+            <div flex="25">
+                    <md-icon md-colors="::{ color: 'primary-50' }" aria-label="historia" class="material-icons">face</md-icon>
+            </div>
+            <div flex="75" hide-xs>
+                    [[ kto ]]
+            </div>
+        </div>-->
+    
+        <md-divider></md-divider>
+
+        <div layout="row" layout-align="space-between center" ng-click="przejdzDo('myCollection')" class="palec">
+            <div flex="25">
+                    <md-icon md-colors="::{ color: 'primary-50' }" aria-label="myCollection" class="material-icons">album</md-icon>
+            </div>
+            <div flex="75" hide-xs>
+                    My collection
+            </div>
+        </div>
+        <div layout="row" layout-align="space-between center" ng-click="przejdzDo('myBlends')" class="palec">
+            <div flex="25">
+                    <md-icon md-colors="::{ color: 'primary-50' }" aria-label="myCollection" class="material-icons">tune</md-icon>
+            </div>
+            <div flex="75" hide-xs>
+                    My blends
+            </div>
+        </div>
+        <div layout="row" layout-align="space-between center" ng-click="przejdzDo('mySets')" class="palec">
+            <div flex="25">
+                    <md-icon md-colors="::{ color: 'primary-50' }" aria-label="myCollection" class="material-icons">speaker_group</md-icon>
+            </div>
+            <div flex="75" hide-xs>
+                    My sets
+            </div>
+        </div>
+
+        <md-divider></md-divider>
+        
+        <div layout="row" layout-align="space-between center" ng-click="przejdzDo('othersBlends')" class="palec">
+            <div flex="25">
+                    <md-icon md-colors="::{ color: 'primary-50' }" aria-label="myCollection" class="material-icons">tune</md-icon>
+            </div>
+            <div flex="75" hide-xs>
+                    Others' blends
+            </div>
+        </div>
+        <div layout="row" layout-align="space-between center" ng-click="przejdzDo('othersSets')" class="palec">
+            <div flex="25">
+                    <md-icon md-colors="::{ color: 'primary-50' }" aria-label="myCollection" class="material-icons">speaker_group</md-icon>
+            </div>
+            <div flex="75" hide-xs>
+                    Others' sets
+            </div>
+        </div>
+
+        <md-divider></md-divider>
+    
+        <div layout="row" layout-align="space-between center" ng-click="wyloguj()" class="palec">
+            <div flex="25">
+                    <md-icon md-colors="::{ color: 'primary-50' }" aria-label="wyloguj" class="material-icons">power_settings_new</md-icon>
+            </div>
+            <div flex="75" hide-xs>
+                    Log out
+            </div>
+        </div>
+
+    
+</md-sidenav>
+<div ng-if="kto" id="navOpen">
+    <md-button ng-click="openLeftMenu()" hide-gt-sm class="md-icon-button" style="margin:12px">
+                <md-icon md-colors="::{ color: 'primary-50' }" aria-label="Menu" class="material-icons">menu</md-icon>
+    </md-button>
+</div>
+
+<!-- koniec navi i guzika -->
+<!-- md-content musi być, żeby sidenav był fixed. czasami do tego parent sidenava musi miec layout-fill -->
+
+            <div ng-show="stateIsLoading" layout="column" flex layout-align="center center" class="progressBarFixed">
+                <md-progress-linear md-mode="indeterminate"></md-progress-linear>
+            </div>
+
+        <md-content flex>
+
+            <div ng-view ng-if="!stateIsLoading" layout="column" layout-wrap flex="nogrow" id="ngwju" scroll>
+                
+                <!-- START NG VIEW - angular to zastępuje, więc dla SEO powinno być git-->
+                
+<md-toolbar class="searchPanel md-raised toolbarFixed toolbarFixedPosLeft0" flex layout="row" layout-align="end center">
+    <md-button ng-click="przesunDo('home')">
+        home
+    </md-button>
+    <md-button ng-click="przesunDo('about')">
+        about
+    </md-button>
+    <md-button ng-click="przesunDo('faq')">
+        faq
+    </md-button>
+</md-toolbar>
+<section layout="column" class="tlo" id="home" layout-align="center center">
+    
+        <h1 class="h1Logo"><span class="thin">Blend</span><span class="bold">Wax</span></h1>
+        <h2 class="h2Logo">never forget a transition</h2>
+
+        <md-button  ng-click="przejdzDoNormalnie('login')" class="md-primary md-raised">
+                    log in
+        </md-button>
+        <div class="h2Logo">or</div>
+        <md-button ng-click="przejdzDoNajnormalniej('oauth/dyskox.php')" class="md-primary md-raised">
+                    <md-tooltip md-delay="100">for free :)</md-tooltip>    
+                    sign up with Discogs
+        </md-button>
+
+    
+</section>
+<section layout="column" class="sekcja" id="about" layout-align="center center">
+    <h2>About</h2>
+    <p>
+    Long story short:<br/>
+    
+    BlendWax is a web application for djs who prefer vinyl to other medium. With BlendWax you can describe and manage transitions (blends) between tracks, create/plan whole dj sets with transition descriptions. You can also view and rate other users' blends and sets.
+    </p>
+    <p>
+    Short story long:<br/>
+    "As far back as I can remember I always wanted to be a gangster"... And then I became a secondary programmer, fond of turntables and vinyl records.
+    I've made quite a few incredibly brilliant transitions during my sets. So what, if after some time I was not able to do that as superbly as at the first attempt. Why was that so? Mainly because I couldn't remember at which moment of the first track I released the second track and/or where the cue point was. I had to make at least a few trials to figure out how and 'when' those two tracks would match perfectly.
+    Taught by experience, I started to write down some of those 'perfect' blends on sheets of paper... I have absolutely no idea where to find them now... And that's why BlendWax was created.
+    
+    <!--I nieraz zdarzyło mi się zrobić genialne przejście między dwoma trackami, ale po jakimś czasie miałem niemały problem, żeby je powtórzyć. Dlaczego? przede wszystkim dlatego, że nie mogłem sobie przypomnieć w którym momencie of the 1st track I released the 2nd track or where was the cue point. Musiałem wykonać przynajmniej kilka prób przejsćia, żeby sobie w końcu przypomnieć when and how those two tracks matched perfectly. Nauczony doświadczeniem co fajniejsze blendy zacząłem zapisywać na kartkach. Nie mam bladego pojęcia gdzie one teraz są... And that's why BlendWax was created.<br/>-->
+
+    Yeah, I know, "A good dj doesn't need to write down his blends or plan his sets. A good dj can feel his audience on the dancefloor.
+    A good dj knows what to put on the deck at the very moment. A good dj knows what the audience expects. A good dj relies on telepathy. A good dj blah blah blah..." For Christ sake, I've already heard that, I even agree with that to some extent. And... oh, well, I've made BlendWax anyway :)
+    
+    <!--"Dobry deejay nie musi zapisywać blendów ani planować setów, bo czuje publiczność i wie co publiczność chce w danym momencie i dobry deejay musi improwizować, bo to co gra to zależy od atmosfery na parkiecie, bo najważniejsza jest publiczność i dobry deejay to on to normalnie telepatycznie wie, że ma właśnie tę piosenkę puścić z adaptera i jak wie to na pewno zrobi świetne przejście blah blah blah..." For Christ sake, I've already heard that, I even agree with that in some point. But well, I've made BlendWax anyway :)-->
+    </p>
+    <p>
+    P.S. I never wanted to be a gangster actually, I'm a pacifist :)
+    </p>
+    
+</section>
+<md-divider></md-divider>
+<section layout="column" class="sekcja" id="faq" layout-align="center center" md-colors="::{ background: 'grey-800'  }">
+    <h2>Freqently asked questions</h2>
+
+    <h3>1. HOW CAN I SIGN OR LOG IN?</h3>
+    <p>
+    If you are new to BlendWax, you have to sign up with Discogs first. In order to do that you need to have a Discogs account. Clicking on the 'sign up with Discogs' button will redirect you to Discogs page, where you will be asked to authorize BlendWax to use your Discogs account. After the successfull authorization you will be redirected to BlendWax again and asked to set a new password for BlendWax. Once you create the password for BlendWax, you are no longer new to the app and from now on you can log in using your Discogs login and the password you have just created. It is not recommended to use the 'sign up with discogs' button if you already have the credentials for BlendWax, unless you have revoked BlendWax's authorization in your Discogs account settings. If so, you need to sign up with Discogs again.
+    </p>
+
+    <h3>2. HOW TO IMPORT OR UPDATE MY COLLECTION FROM DISCOGS?</h3>
+    <p>
+    You can open 'import/update' section by clicking 'Import from Discogs' button in 'My collection' section.
+    </p>
+
+    <h3>3. WHAT IF THE RELEASE IS NOT ADDED TO DISCOGS YET?</h3>
+    <p>
+    Well, someone has to add it in Discogs first.
+    </p>
+
+    <h3>4. DOES BLENDWAX CONNECT TO DISCOGS AND GET DATA EVERYTIME I LOG IN?</h3>
+    <p>
+    Nope. Due to Discogs' request limits and further service optimalization, BlendWax connects to Discogs only during signing in and importing/updating your collection. All the users' releases are downloaded to BlendWax.
+    </p>
+
+    <h3>5. WHICH DATA DOES BLENDWAX GET FROM DISCOGS?</h3>
+    <p>
+    Only your username and collection with labels, artists, tracks and cover images.
+    </p>
+
+    <h3>6. WHAT IF I REVOKE BLENDWAX'S ACCESS TO DISCOGS?</h3>
+    <p>
+    You can still log in to BlendWax but import/update from Discogs will not work anymore. To fix that just sign up with Discogs again.
+    </p>
+    
+    <h3>7. I FORGET THE PASSWORD FOR BLENDWAX. WHAT SHOULD I DO?</h3>
+    <p>
+    Sign up with Discogs again.
+    </p>
+</section>
+                
+                <!-- KONIEC NG VIEW -->
+            
+            </div>
+
+            
+            <md-content md-theme="ciemny" flex>
+                <footer layout="column" layout-gt-xs="row" class="stopka" id="footer" layout-align-gt-xs="space-around start" layout-align="space-between center" layout-wrap>
+
+                    <!--<div flex-gt-xs="33" layout="column" layout-align="center center">
+
+                    </div>-->
+                    
+                    <div flex-gt-xs="50" layout="column" layout-align="center center">
+                        <div layout="column" layout-align="center start">
+                        <span class="bold" style="margin-top:8px;">LEGAL</span>
+                        <ul>
+                            <li class="palec" ng-click="przejdzDoNormalnie('terms')">
+                                Terms and conditions
+                            </li>
+                            <li class="palec" ng-click="przejdzDoNormalnie('privacy')">
+                                Privacy policy
+                            </li>
+                            <li class="palec" ng-click="przejdzDoNormalnie('cookies')">
+                                Cookies policy
+                            </li>
+                            <li>&nbsp;</li>
+                            <li>
+                                All data provided by <a href="https://discogs.com" target="_blank">Discogs</a>
+                            </li>
+                        </ul>
+                        </div>
+                    </div>
+                    
+                    <div flex-gt-xs="50" layout="column" layout-align="center center">
+                        <md-card>
+                        
+                        <md-card-title layout="column">
+                            <md-card-title-text>
+                                <span class="">Ask a question or suggest something</span>
+                            </md-card-title-text>
+                        </md-card-title>
+                        
+                        <form name="formularzKontaktowy" ng-submit="wyslijEmail()">
+                        <md-card-content layout="column" layout-align="center center">
+                            <md-input-container>
+                                <label>Your email</label>
+                                <input name="email" ng-model="kontakt.email" required type="email">
+                                <div ng-messages="formularzKontaktowy.email.$error">
+                                    <div ng-message="required">Required for reply purposes only</div>
+                                </div>
+                            </md-input-container>
+                            
+                            <md-input-container>
+                                <label>Question/suggestion</label>
+                                <textarea name="question" ng-model="kontakt.question" required></textarea>
+                                <div ng-messages="formularzKontaktowy.email.$error">
+                                    <div ng-message="required">Required</div>
+                                </div>
+                            </md-input-container>
+                            
+                        </md-card-content>
+                            
+                        <md-card-actions layout="row" layout-align="center center">
+                            <md-button type="submit" layout="row" layout-align="center center">
+                                <span ng-hide="kontakt.loader">send</span>
+                                <md-progress-circular ng-show="kontakt.loader" md-diameter="24"></md-progress-circular>
+                            </md-button>
+                        </md-card-actions>
+                    
+                        </form>
+                        
+                        
+                        </md-card>
+                        
+                    </div>
+                    
+                </footer>
+                <md-divider></md-divider>
+                <div flex-gt-xs="100" layout="row" layout-align="center center" class="stopkaRok">© BlendWax 2018</div>
+            </md-content>
+            
+            
+        </md-content>
+        
+
+<div ng-if="!potwierdzoneCiasto" class="ciasteczkowyWielkiPtak">
+    BlendWax uses cookies to ensure you get the best experience on our website. <span class="palec" ng-click="przejdzDoNormalnie('cookies')">Learn more</span>
+    <md-button ng-click="potwierdzCiasto()">Got it!</md-button>
+</div>
+
+
+
+        
+		<!--<adsense-directive 
+			ad-client="YOUR_CLIENT_ID"
+			ad-slot="YOUR_SLOT_ID" 
+			ad-format="auto"
+			css-style="display:inline-block;width:320px;height:50px;">
+		</adsense-directive>
+        
+    </body>
+
+</html>

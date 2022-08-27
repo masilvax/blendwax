@@ -1,0 +1,91 @@
+<md-toolbar class="searchPanel md-raised toolbarFixed toolbarFixedPosLeft0" flex layout="row" layout-align="end center">
+    <md-button ng-click="przesunDo('home')">
+        home
+    </md-button>
+    <md-button ng-click="przesunDo('about')">
+        about
+    </md-button>
+    <md-button ng-click="przesunDo('faq')">
+        faq
+    </md-button>
+</md-toolbar>
+<section layout="column" class="tlo" id="home" layout-align="center center">
+    
+        <h1 class="h1Logo"><span class="thin">Blend</span><span class="bold">Wax</span></h1>
+        <h2 class="h2Logo">never forget a transition</h2>
+
+        <md-button  ng-click="przejdzDoNormalnie('login')" class="md-primary md-raised">
+                    log in
+        </md-button>
+        <div class="h2Logo">or</div>
+        <md-button ng-click="przejdzDoNajnormalniej('oauth/dyskox.php')" class="md-primary md-raised">
+                    <md-tooltip md-delay="100">for free :)</md-tooltip>    
+                    sign up with Discogs
+        </md-button>
+
+    
+</section>
+<section layout="column" class="sekcja" id="about" layout-align="center center">
+    <h2>About</h2>
+    <p>
+    Long story short:<br/>
+    
+    BlendWax is a web application for djs who prefer vinyl to other medium. With BlendWax you can describe and manage transitions (blends) between tracks, create/plan whole dj sets with transition descriptions. You can also view and rate other users' blends and sets.
+    </p>
+    <p>
+    Short story long:<br/>
+    "As far back as I can remember I always wanted to be a gangster"... And then I became a secondary programmer, fond of turntables and vinyl records.
+    I've made quite a few incredibly brilliant transitions during my sets. So what, if after some time I was not able to do that as superbly as at the first attempt. Why was that so? Mainly because I couldn't remember at which moment of the first track I released the second track and/or where the cue point was. I had to make at least a few trials to figure out how and 'when' those two tracks would match perfectly.
+    Taught by experience, I started to write down some of those 'perfect' blends on sheets of paper... I have absolutely no idea where to find them now... And that's why BlendWax was created.
+    
+    <!--I nieraz zdarzyło mi się zrobić genialne przejście między dwoma trackami, ale po jakimś czasie miałem niemały problem, żeby je powtórzyć. Dlaczego? przede wszystkim dlatego, że nie mogłem sobie przypomnieć w którym momencie of the 1st track I released the 2nd track or where was the cue point. Musiałem wykonać przynajmniej kilka prób przejsćia, żeby sobie w końcu przypomnieć when and how those two tracks matched perfectly. Nauczony doświadczeniem co fajniejsze blendy zacząłem zapisywać na kartkach. Nie mam bladego pojęcia gdzie one teraz są... And that's why BlendWax was created.<br/>-->
+
+    Yeah, I know, "A good dj doesn't need to write down his blends or plan his sets. A good dj can feel his audience on the dancefloor.
+    A good dj knows what to put on the deck at the very moment. A good dj knows what the audience expects. A good dj relies on telepathy. A good dj blah blah blah..." For Christ sake, I've already heard that, I even agree with that to some extent. And... oh, well, I've made BlendWax anyway :)
+    
+    <!--"Dobry deejay nie musi zapisywać blendów ani planować setów, bo czuje publiczność i wie co publiczność chce w danym momencie i dobry deejay musi improwizować, bo to co gra to zależy od atmosfery na parkiecie, bo najważniejsza jest publiczność i dobry deejay to on to normalnie telepatycznie wie, że ma właśnie tę piosenkę puścić z adaptera i jak wie to na pewno zrobi świetne przejście blah blah blah..." For Christ sake, I've already heard that, I even agree with that in some point. But well, I've made BlendWax anyway :)-->
+    </p>
+    <p>
+    P.S. I never wanted to be a gangster actually, I'm a pacifist :)
+    </p>
+    
+</section>
+<md-divider></md-divider>
+<section layout="column" class="sekcja" id="faq" layout-align="center center" md-colors="::{ background: 'grey-800'  }">
+    <h2>Freqently asked questions</h2>
+
+    <h3>1. HOW CAN I SIGN OR LOG IN?</h3>
+    <p>
+    If you are new to BlendWax, you have to sign up with Discogs first. In order to do that you need to have a Discogs account. Clicking on the 'sign up with Discogs' button will redirect you to Discogs page, where you will be asked to authorize BlendWax to use your Discogs account. After the successfull authorization you will be redirected to BlendWax again and asked to set a new password for BlendWax. Once you create the password for BlendWax, you are no longer new to the app and from now on you can log in using your Discogs login and the password you have just created. It is not recommended to use the 'sign up with discogs' button if you already have the credentials for BlendWax, unless you have revoked BlendWax's authorization in your Discogs account settings. If so, you need to sign up with Discogs again.
+    </p>
+
+    <h3>2. HOW TO IMPORT OR UPDATE MY COLLECTION FROM DISCOGS?</h3>
+    <p>
+    You can open 'import/update' section by clicking 'Import from Discogs' button in 'My collection' section.
+    </p>
+
+    <h3>3. WHAT IF THE RELEASE IS NOT ADDED TO DISCOGS YET?</h3>
+    <p>
+    Well, someone has to add it in Discogs first.
+    </p>
+
+    <h3>4. DOES BLENDWAX CONNECT TO DISCOGS AND GET DATA EVERYTIME I LOG IN?</h3>
+    <p>
+    Nope. Due to Discogs' request limits and further service optimalization, BlendWax connects to Discogs only during signing in and importing/updating your collection. All the users' releases are downloaded to BlendWax.
+    </p>
+
+    <h3>5. WHICH DATA DOES BLENDWAX GET FROM DISCOGS?</h3>
+    <p>
+    Only your username and collection with labels, artists, tracks and cover images.
+    </p>
+
+    <h3>6. WHAT IF I REVOKE BLENDWAX'S ACCESS TO DISCOGS?</h3>
+    <p>
+    You can still log in to BlendWax but import/update from Discogs will not work anymore. To fix that just sign up with Discogs again.
+    </p>
+    
+    <h3>7. I FORGET THE PASSWORD FOR BLENDWAX. WHAT SHOULD I DO?</h3>
+    <p>
+    Sign up with Discogs again.
+    </p>
+</section>
